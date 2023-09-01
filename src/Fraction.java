@@ -6,7 +6,7 @@ public class Fraction {
         if (denominator == 0) {
             throw new RuntimeException("Denominator can't be zero");
         }
-        this.numerator = numerator * (denominator < 0 ? 1 : -1);
+        this.numerator = numerator * (denominator < 0 ? -1 : 1);
         this.denominator = Math.abs(denominator);
         normalize();
     }
@@ -28,12 +28,9 @@ public class Fraction {
         denominator /= n;
     }
 
+    @Override
     public String toString() {
-        normalize();
+        if (denominator == 1) return String.valueOf(numerator);
         return numerator + " / " + denominator;
-    }
-
-    public Fraction sumFractionTo(Fraction obj) {
-        return new Fraction(this.numerator + obj.numerator, this.denominator + obj.denominator);
     }
 }
