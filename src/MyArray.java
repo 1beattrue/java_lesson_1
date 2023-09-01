@@ -3,7 +3,7 @@ public class MyArray {
     private int length = 0;
 
     public MyArray(int length) {
-        if (length <= 0) throw new RuntimeException(String.format("Длина массива не может равняться %s", length));
+        if (length <= 0) throw new RuntimeException(String.format("Array length cannot be equal to %s", length));
         array = new int[length];
     }
 
@@ -11,21 +11,16 @@ public class MyArray {
         return length == 0;
     }
 
-    private void updateLength() {
-        length++;
-    }
-
     public void add(int element) {
         if (length < array.length) {
             array[length] = element;
-            updateLength();
+            length++;
         } else {
             throw new RuntimeException("Index out of range");
         }
     }
 
     public int sum() {
-        if (isEmpty()) throw new RuntimeException("Array is empty");
         int i = 0;
         int result = 0;
         while (i < length)
@@ -34,7 +29,6 @@ public class MyArray {
     }
 
     public int sum2() {
-        if (isEmpty()) throw new RuntimeException("Array is empty");
         int i = 0;
         int result = 0;
         do {
@@ -44,12 +38,10 @@ public class MyArray {
     }
 
     public double averageSum() {
-        if (isEmpty()) throw new RuntimeException("Array is empty");
         return (double) sum() / length;
     }
 
     public int min() {
-        if (isEmpty()) throw new RuntimeException("Array is empty");
         int result = array[0];
         for (int i = 0; i < length; i++) {
             if (array[i] < result)
@@ -59,7 +51,6 @@ public class MyArray {
     }
 
     public int max() {
-        if (isEmpty()) throw new RuntimeException("Array is empty");
         int result = array[0];
         for (int i = 0; i < length; i++) {
             if (array[i] > result)

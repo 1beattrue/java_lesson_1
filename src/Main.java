@@ -16,6 +16,13 @@ public class Main {
         array.printInfo();
         System.out.println();
 
+        // Задание 5
+        System.out.println("Аргументы командной строки:");
+        int num = 0;
+        for (String arg : args)
+            System.out.println(String.format("Аргумент %s: ", num++) + arg);
+        System.out.println();
+
         // Задание 6
         System.out.println("Первые 10 чисел гармонического ряда:");
         for (int i = 1; i <= 10; i++) {
@@ -25,10 +32,10 @@ public class Main {
         System.out.println();
 
         // Задание 7
-        System.out.println(
-                Factorial.calculate(-1)
+        System.out.printf("Факториалы:"
                         + " " + Factorial.calculate(0)
                         + " " + Factorial.calculate(5)
+                        // + " " + Factorial.calculate(-1)
         );
     }
 }

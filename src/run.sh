@@ -1,2 +1,2 @@
-javac Arguments.java
-java Arguments a b c d e
+javac Main.java
+java Main a b c d e
